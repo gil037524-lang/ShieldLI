@@ -7,6 +7,13 @@ dependencies = []
 authors = [{ name = "Albert Gil" }]
 readme = "README.md"
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-cov>=4",
+    "ruff>=0.5",
+]
+
 [project.scripts]
 shieldli = "shieldli.main:cli"
 
@@ -16,3 +23,15 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP"]  # common rules

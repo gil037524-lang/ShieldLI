@@ -1,5 +1,5 @@
 ## About The Project
-File CLI Tool build 
+File CLI Tool build (Shieldli)
 
 A simple lightweight, cross-platform file manipulation CLI built with Python using python and stdlibraries. Built as a learning opportunity
 
@@ -49,23 +49,23 @@ pip install shieldli-0.2.tar.gz
 
 2. Verify the install worked:
    ```bash
-   filecli help
+   shieldli help
    ```
 
 3. Try creating and listing a file:
    ```bash
-   filecli create myfile.txt "hello world"
-   filecli ls
+   shieldli create myfile.txt "hello world"
+   shieldli ls
    ```
 
 4. You're ready to go. Use -h or -help to display usage
     ```bash
-   filecli -h
+   shieldli -h
    ```
 ## Usage
 
 ```
-filecli <command> [args...]
+shieldli <command> [args...]
 
 commands:
   list, ls [path]              list files in a directory (default: current dir)
@@ -91,7 +91,7 @@ pytest -v
 Run tests with coverage:
 
 ```bash
-pytest --cov=filecli --cov-report=term-missing -v
+pytest --cov=shieldli --cov-report=term-missing -v
 ```
 
 Lint and format:
@@ -110,7 +110,7 @@ python -m build
 which builds the packages
 
 ```
-dist/filecli-0.1.0.tar.gz and dist/filecli-0.1.0-py3-none-any.whl
+dist/shieldli-0.1.0.tar.gz and dist/shieldli-0.1.0-py3-none-any.whl
 ```
 ## Roadmap
 

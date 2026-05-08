@@ -2,6 +2,7 @@ import shutil  # file operation tools (need copy)
 import sys
 from pathlib import Path  # filesystem paths lib
 
+
 def cmd_list(args):
     """List files in a directory. This was not part of the assignment,
        but helped me test the other functions are working.
@@ -19,8 +20,9 @@ def cmd_list(args):
         print(f"error: {err}", file=sys.stderr)
         sys.exit(1)
 
+
 def cmd_create(args):
-    if len(args) > 2 or len(args) < 1 :
+    if len(args) > 2 or len(args) < 1:
         print("usage: shieldli cr <path>/filename", file=sys.stderr)
         sys.exit(1)
 
@@ -33,7 +35,7 @@ def cmd_create(args):
 
     if path.exists():
         ans = input(f"error: {path} already exists, overwrite?(y/n)")
-        if ans.lower() != 'y':
+        if ans.lower() != "y":
             sys.exit(0)
 
     try:
@@ -42,6 +44,7 @@ def cmd_create(args):
     except OSError as err:
         print(f"error: {err}", file=sys.stderr)
         sys.exit(1)
+
 
 def cmd_copy(args):
     """copy files and directories
@@ -110,6 +113,7 @@ def cmd_merge(args):
         print(f"error: {err}", file=sys.stderr)
         sys.exit(1)
 
+
 def usage():
     print(
         "usage: shieldli <command> [args]\n"
@@ -122,6 +126,7 @@ def usage():
         "  merge <input2> <input2> <output>  merge two files\n"
         "  help                              show help options"
     )
+
 
 def cli():
     if len(sys.argv) < 2:  # if there is less than two arguments, show user cmds
@@ -148,6 +153,7 @@ def cli():
         print(f"unknown command: {command}")
         usage()
         sys.exit(1)
+
 
 if __name__ == "__main__":
     cli()
